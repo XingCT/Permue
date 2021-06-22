@@ -1,0 +1,320 @@
+@import "reset";
+
+
+
+@mixin between{
+    display: flex;
+    justify-content: space-between;
+} 
+
+@mixin center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin box {
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+}
+
+@mixin touch {
+    border-radius: 30px;
+    border: 2px solid;
+    text-align: center;
+}
+
+
+@mixin h1{
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 60px;
+}
+@mixin h2 ($color){
+    color: $color;
+    font-size: 32px;
+    font-weight: bold;
+}
+@mixin h3 ($color){
+    color:$color;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+}
+@mixin h4 ($color){
+    color: $color;
+    font-size: 20px;
+    line-height:30px;
+}
+@mixin p ($color){
+    color: $color;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+
+
+
+
+
+
+.container{
+	max-width: 1110px;
+	margin: 0 auto;
+}
+
+.header{
+    @include between;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    ul{
+        display: flex;
+        @include h4(gray);
+        li{
+            @include center;
+        }
+        .material-icons{
+            margin-left: 31px;
+        }
+        a{
+            color: #8D8D8D;
+            text-decoration: none;
+        }
+    }
+}
+
+.image{
+    background-size:cover;
+    background-repeat: no-repeat;
+    .title{
+        @include center;
+        justify-content: flex-end;
+        padding-top: 295px;
+        ul{
+            max-width: 445px;
+            h1{
+                @include h1;
+            }
+            h3{
+                @include h3 (#FFFFFF);
+                margin-bottom: 16px;
+            }
+            a{
+                @include touch;
+                @include h2 (#FFFFFF);
+                margin-right: 95px;
+                margin-bottom: 295px; 
+                display: block;
+                line-height: 56px;
+                text-decoration:none;
+            }    
+            a:hover{
+                background:rgba(241, 238, 238, 0.5)  
+            }    
+        }
+    }
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    .box{
+        @include box;
+        ul{
+            margin: auto;
+            max-width: 350px;            
+                h2{
+                @include h2(#000000);
+                line-height: 48px;
+                }
+                h4{
+                @include h4 (#000000);
+                }
+                p{
+                @include p (#AC8A46);
+                margin-top: 16px;
+                }
+                a{
+                @include p (#AC8A46);
+                margin-top: 16px;
+                text-decoration: none;
+            }
+        }
+    }
+        .box-1{
+            li{
+                padding-bottom: 52px;
+                h3{
+                    @include h3 (#000000);
+                    line-height:36px;
+                }    
+                p{
+                    @include p (#000000);
+                    line-height: 24px;    
+                }
+                a{
+                    @include touch;
+                    @include h4 (#000000);
+                    display: block;
+                    line-height: 56px;
+                    text-decoration:none;
+                }    
+                a:hover{
+                    background: darken($color: #FFFFFF, $amount: 10%);             
+                }
+            }            
+        }    
+    }
+
+
+.content-1{
+    background: #E0E0E0;
+    .three{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        ul{
+            @include between;
+            h3{
+                @include h3 (#000000);
+            }
+            p{
+                @include p (#000000);
+            }
+            span{
+                @include p (#8D8D8D);
+                margin-left: 8px
+            }
+            .img{
+                height: 540px;
+                width: 350px;
+                background: darken($color: #8D8D8D, $amount: 5%);
+                background-blend-mode: multiply;
+                background-size: cover;
+                background-position: center;               
+                @include h3 (#FFFFFF);
+                @include center;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+
+.content-2{
+    @include between;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    .word{
+        padding-left: 30px;
+        @include box;
+        h2{
+            @include h2(#000000);
+            line-height: 48px
+        }
+        h4{
+            @include h4 (#000000);
+        }
+        p{
+            @include p (#000000);
+            margin-top: 16px;            
+            a{
+                @include p (#AC8A46);
+                margin-top: 16px;
+            }
+        }
+        
+    }
+}
+
+
+.content-3{
+    background-size: cover;
+    background-position: center;
+    .information{
+        display: flex;
+        flex-direction: column;
+        h2{
+            @include h2(#000000);
+            line-height: 48px;
+            padding-top: 312px;
+            padding-left: 16px;
+            color: #8D8D8D;
+        }
+        .email{
+            @include center;
+            margin-bottom: 112px;
+            margin-top: 20px;
+            text-decoration: none;
+            }
+            .white a{
+                background-color: #FFFFFF;
+                border: 2px solid #AC8A46;
+                @include p (#8D8D8D);
+                padding-top: 21px;
+                padding-left: 16px;
+                padding-bottom: 20px;
+                padding-right: 57px;
+                text-decoration: none;
+            }
+            .white a:hover{
+                background: darken($color: #FFFFFF, $amount: 10%);  
+            }
+            .yellow a{
+                @include p (#FFFFFF);
+                background-color: #916000;
+                border: 2px solid #916000;
+                justify-content: center;
+                padding-top: 21px;
+                padding-left: 27px;
+                padding-bottom: 20px;
+                padding-right: 26px;
+                text-decoration: none;
+            }
+            .yellow a:hover{
+                background: darken($color: #916000, $amount: 10%);
+            }
+        }
+    }
+    
+
+
+.footer{
+    background: #916000;
+    .foot{
+        display: flex;
+        img{
+            margin-top: 20px;
+            margin-bottom: 22px;
+        }
+        .word{
+            @include between;
+            align-items: center;
+            color: #FFFFFF;
+            p{
+                padding-left: 20px;
+                padding-right: 500px;
+                font-size: 16px;
+            }
+            ul{
+                display: flex;
+                font-size: 24px;
+                @include h4 (#FFFFFF);
+                li{
+                    padding-left: 36px;
+                }
+                a{
+                    @include h4 (#FFFFFF);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
